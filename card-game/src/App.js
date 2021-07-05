@@ -1,11 +1,14 @@
 import CharacterCard from './CharacterCard';
 
+const word = "Hello";
 function App() {
- return (
- <div>
- <CharacterCard value="h"/>
- <CharacterCard value="i"/>
- </div>
+  return (
+    <div>
+      {
+          Array.from(word).map((c, i) => <CharacterCard value={c}/>)
+      }
+
+    </div>
  );
 }
 
