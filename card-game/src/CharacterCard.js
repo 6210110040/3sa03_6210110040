@@ -5,10 +5,11 @@ export default function CharacterCard(props) {
 
     const activate = () => {
         setActive(true)
+        props.activateionHandler(props.value)
     }
 
     const className = `card ${active ? 'activeCard': ''}`
-    
+
     return (
         <div className={className} onClick={activate}>{props.value}</div>
     )
