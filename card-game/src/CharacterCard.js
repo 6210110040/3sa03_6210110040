@@ -4,8 +4,10 @@ export default function CharacterCard(props) {
     const [active, setActive] = useState(false);
 
     const activate = () => {
-        setActive(true)
-        props.activateionHandler(props.value)
+        if(!active){
+            setActive(true) 
+            props.activateionHandler(props.value)
+        }
     }
 
     const className = `card ${active ? 'activeCard': ''}`
