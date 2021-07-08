@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _, { attempt } from 'lodash';
 import { useState } from 'react';
 import CharacterCard from './CharacterCard';
 
@@ -34,14 +34,16 @@ export default function WordCard(props){
             }
         }
         console.log(guess)
+    
     }
 
-    return{
-        <div>
-            {
-                state.chars.map((c, i)) =>
-                    <CharacterCard value={c} key={i} activateionHandler={activateionHandler}/>
-            }
-        </div>
-    }
+        return(
+            <div>
+                {
+                    state.chars.map((c, i) => 
+                        <CharacterCard value={c} key={i} activateionHandler={activateionHandler} attempt={state.attempt}/>
+                    )}
+            </div>
+        )
+
 }
