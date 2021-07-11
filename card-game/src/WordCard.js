@@ -33,12 +33,13 @@ export default function WordCard(props){
                 }
             }else{
                 console.log('reset, next attempt' + '    ' + 'you are try  ' + state.attempt + ' round' )
-                console.log('Hind : start of communication ')
                 setState({...state, guess: '', attempt: state.attempt + 1})
 
                 if(state.attempt == 6 ){
                     console.log('you tried very well ')
                     setState({...state, completed: true})
+                }else{
+                    console.log('Hind : start of communication ') 
                 }
             }
         }
