@@ -28,10 +28,18 @@ export default function WordCard(props){
             if(guess == state.word){
                 console.log('yeah!')
                 setState({...state, completed: true})
+                if(state.attempt == 6 ){
+                    console.log('Congrats, you are on the right track.')
+                }
             }else{
                 console.log('reset, next attempt' + '    ' + 'you are try  ' + state.attempt + ' round' )
                 console.log('Hind : start of communication ')
                 setState({...state, guess: '', attempt: state.attempt + 1})
+
+                if(state.attempt == 6 ){
+                    console.log('you tried very well ')
+                    setState({...state, completed: true})
+                }
             }
         }
         console.log(guess)
@@ -41,6 +49,7 @@ export default function WordCard(props){
         }else if (state.attempt == 5 ){
             console.log('we think you are overthinking it is just a word Hello')
         }
+
     
     }
 
